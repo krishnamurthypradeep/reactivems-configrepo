@@ -1,16 +1,5 @@
-eureka:
- client:
-  registerWithEureka: true
-  fetchRegistry: true
-  serviceUrl:
-   defaultZone: http://localhost:8070/eureka/
 
-server:
-  port: 9000
-  netty:
-    connection-timeout: 2s
-    idle-timeout: 15s
-  shutdown: graceful
+
 
 spring:
   
