@@ -93,7 +93,7 @@ resilience4j:
         slidingWindowSize: 20
         permittedNumberOfCallsInHalfOpenState: 5
         failureRateThreshold: 50
-        waitDurationInOpenState: 15000
+        waitDurationInOpenState: 15
   timelimiter:
     configs:
       default:
