@@ -37,18 +37,18 @@ spring:
       routes:
         
         - id: catalog-route
-          uri: http://localhost:9001/api/v1
+          uri: lb://CATALOG-SERVICE
           predicates:
-            - Path=/products/**
+            - Path=/api/v1/products/**
           filters:
             - name: CircuitBreaker
               args:
                 name: catalogCircuitBreaker
                 fallbackUri: forward:/catalog-fallback
         - id: order-route
-          uri: http://localhost:9002/api/v1
+          uri: lb://ORDER-SERVICE
           predicates:
-            - Path=/orders/**
+            - Path=/api/v1/orders/**
           filters:
             - name: CircuitBreaker
               args:
