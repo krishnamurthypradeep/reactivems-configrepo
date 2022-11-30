@@ -7,7 +7,7 @@ eureka:
    defaultZone: http://localhost:8070/eureka/ 
 
 server:
-  port: 8080
+  port: 9090
   shutdown: graceful
 
 
@@ -74,17 +74,17 @@ spring:
     timeout: 10m
     redis:
       namespace: myapp:edge
-  # security:
-  #   oauth2:
-  #     client:
-  #       registration:
-  #         keycloak:
-  #           client-id: edge-service
-  #           client-secret: myapp-keycloak-secret
-  #           scope: openid
-  #       provider:
-  #         keycloak:
-  #           issuer-uri: http://myapp-keycloak:8080/auth/realms/MyProductshop
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: api-gateway-service
+            client-secret: myapp-keycloak-secret
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/auth/realms/ecomappProductshop
 
 resilience4j:
   circuitbreaker:
