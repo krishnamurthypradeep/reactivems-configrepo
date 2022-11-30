@@ -1,9 +1,9 @@
-eureka:
- client:
-  registerWithEureka: true
-  fetchRegistry: true
-  serviceUrl:
-   defaultZone: http://localhost:8070/eureka/ 
+# eureka:
+#  client:
+#   registerWithEureka: true
+#   fetchRegistry: true
+#   serviceUrl:
+#    defaultZone: http://localhost:8070/eureka/ 
 
 server:
   port: 9001
@@ -23,7 +23,7 @@ spring:
       keyspace-name: reactive
       port: 9042
       contact-points:
-      - 127.0.0.1
+      - cassandra-catalog
       local-datacenter: datacenter1
 ---
 spring:
@@ -31,7 +31,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/realms/ecomappProductshop      
+          issuer-uri: http://myapp-keycloaks:8080/realms/ecomappProductshop      
         
   
 

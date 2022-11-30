@@ -48,7 +48,7 @@ spring:
       routes:
         
         - id: catalog-route
-          uri: lb://CATALOG-SERVICE
+          uri: http://catalog-service
           predicates:
             - Path=/api/v1/products/**
           filters:
@@ -57,7 +57,7 @@ spring:
                 name: catalogCircuitBreaker
                 fallbackUri: forward:/catalog-fallback
         - id: order-route
-          uri: lb://ORDER-SERVICE
+          uri: http://order-service
           predicates:
             - Path=/api/v1/orders/**
           filters:
@@ -85,7 +85,7 @@ spring:
             scope: openid,roles
         provider:
           keycloak:
-            issuer-uri: http://localhost:8080/realms/ecomappProductshop
+            issuer-uri: http://myapp-redis:8080/realms/ecomappProductshop
 
 resilience4j:
   circuitbreaker:

@@ -1,9 +1,9 @@
-eureka:
- client:
-  registerWithEureka: true
-  fetchRegistry: true
-  serviceUrl:
-   defaultZone: http://localhost:8070/eureka/ 
+# eureka:
+#  client:
+#   registerWithEureka: true
+#   fetchRegistry: true
+#   serviceUrl:
+#    defaultZone: http://localhost:8070/eureka/ 
 
 server:
   port: 9002
@@ -23,7 +23,7 @@ spring:
       keyspace-name: reactive
       port: 9043
       contact-points:
-      - 127.0.0.1
+      - cassandra-order
       local-datacenter: datacenter1
         
   
