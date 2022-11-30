@@ -7,7 +7,7 @@ eureka:
    defaultZone: http://localhost:8070/eureka/ 
 
 server:
-  port: 9090
+  port: 9000
   shutdown: graceful
 
 
@@ -84,7 +84,7 @@ spring:
             scope: openid
         provider:
           keycloak:
-            issuer-uri: http://localhost:8080/auth/realms/ecomappProductshop
+            issuer-uri: http://localhost:8080/realms/ecomappProductshop
 
 resilience4j:
   circuitbreaker:
